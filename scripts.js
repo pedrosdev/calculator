@@ -22,6 +22,15 @@ operators.forEach((operator) => operator.addEventListener("click", (e) => {
 const equals = document.querySelector("#equals");
 equals.addEventListener("click", displaySolution);
 
+const clear = document.querySelector("#clear");
+clear.addEventListener("click", () => {
+  display.textContent = "0";
+  displayValue = "";
+  a = 0;
+  op = "";
+  b = 0;
+});
+
 function displaySolution() {
   if (a && op) {
     b = +displayValue;
