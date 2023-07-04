@@ -2,6 +2,18 @@ let a;
 let operator;
 let b;
 
+const digits = document.querySelectorAll(".digit");
+digits.forEach((digit) => digit.addEventListener("click", displayNumber));
+
+let displayValue = "";
+
+function displayNumber(e) {
+  displayValue += e.target.textContent;
+  
+  const display = document.querySelector("#display");
+  display.textContent = displayValue;
+}
+
 function operate(operator, a, b) {
   switch (operator) {
     case "+":
