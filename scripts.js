@@ -1,9 +1,9 @@
 const display = document.querySelector("#display");
 let displayValue = "";
 
-let a;
-let op;
-let b;
+let a = 0;
+let op = "";
+let b = 0;
 
 const digits = document.querySelectorAll(".digit");
 digits.forEach((digit) => digit.addEventListener("click", displayNumber));
@@ -23,10 +23,12 @@ const equals = document.querySelector("#equals");
 equals.addEventListener("click", displaySolution);
 
 function displaySolution() {
-  b = +displayValue;
-
-  displayValue = operate(op, a, b);
-  updateDisplay();
+  if (a && op) {
+    b = +displayValue;
+  
+    displayValue = operate(op, a, b);
+    updateDisplay();
+  }
 }
 
 function displayNumber(e) {
