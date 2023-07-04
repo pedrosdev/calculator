@@ -26,12 +26,16 @@ function displaySolution() {
   b = +displayValue;
 
   displayValue = operate(op, a, b);
-  display.textContent = displayValue;
+  updateDisplay();
 }
 
 function displayNumber(e) {
-  displayValue += e.target.textContent;  
-  display.textContent = displayValue;
+  displayValue += e.target.textContent;
+  updateDisplay();
+}
+
+function updateDisplay() {
+  display.textContent = round(+displayValue, 8);
 }
 
 function operate(op, a, b) {
@@ -61,4 +65,8 @@ function multiply(a, b) {
 
 function divide(a, b) {
   return a / b;
+}
+
+function round(number, dec) {
+  return parseFloat(number.toFixed(dec));
 }
