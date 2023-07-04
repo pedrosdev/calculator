@@ -1,3 +1,20 @@
+let a;
+let operator;
+let b;
+
+function operate(operator, a, b) {
+  switch (operator) {
+    case "+":
+      return add(a, b);
+    case "-":
+      return subtract(a, b);
+    case "*":
+      return multiply(a, b);
+    case "/":
+      return divide(a, b);
+  }
+}
+
 function add(a, b) {
   return a + b;
 }
