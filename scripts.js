@@ -38,6 +38,8 @@ function displaySolution() {
     displayValue = operate(op, a, b);
     updateDisplay();
   }
+
+  op = "";
 }
 
 function displayNumber(e) {
