@@ -23,13 +23,7 @@ const equals = document.querySelector("#equals");
 equals.addEventListener("click", displaySolution);
 
 const clear = document.querySelector("#clear");
-clear.addEventListener("click", () => {
-  display.textContent = "0";
-  displayValue = "";
-  a = 0;
-  op = "";
-  b = 0;
-});
+clear.addEventListener("click", reset);
 
 function displaySolution() {
   if (a && op) {
@@ -82,4 +76,12 @@ function divide(a, b) {
 
 function round(number, dec) {
   return parseFloat(number.toFixed(dec));
+}
+
+function reset() {
+  a = 0;
+  op = "";
+  b = 0;
+  displayValue = "";
+  display.textContent = "0";
 }
