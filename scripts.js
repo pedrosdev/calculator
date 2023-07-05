@@ -1,6 +1,6 @@
 const display = document.querySelector("#display");
-let displayValue = "";
 
+let displayValue = "";
 let a = 0;
 let op = "";
 let b = 0;
@@ -15,18 +15,21 @@ operators.forEach((operator) => operator.addEventListener("click", (e) => {
   }
 
   op = e.target.textContent;
-  a = +displayValue;
+  a = +display.textContent;
   displayValue = "";
 }));
 
-const equals = document.querySelector("#equals");
-equals.addEventListener("click", displaySolution);
+const equalsButton = document.querySelector("#equals");
+equalsButton.addEventListener("click", () => {
+  displaySolution();
+  displayValue = "";
+});
 
 const clear = document.querySelector("#clear");
 clear.addEventListener("click", reset);
 
 function displaySolution() {
-  if (a && op) {
+  if (a && op && displayValue !== "") {
     b = +displayValue;
   
     displayValue = operate(op, a, b);
