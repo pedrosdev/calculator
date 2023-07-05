@@ -33,10 +33,13 @@ function displaySolution() {
     b = +displayValue;
   
     displayValue = operate(op, a, b);
-    updateDisplay();
+    
+    if (typeof displayValue == "string") {
+      display.textContent = displayValue;
+    } else {
+      display.textContent = round(+displayValue, 8);
+    }
   }
-
-  op = "";
 }
 
 function displayNumber(e) {
@@ -51,7 +54,7 @@ function updateDisplay() {
 function operate(op, a, b) {
   switch (op) {
     case "÷":
-      return divide(a, b);
+      return (b != 0) ? divide(a, b) : "YOU IDIOT!";
     case "×":
       return multiply(a, b);
     case "-":
