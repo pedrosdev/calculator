@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;700&family=Inconsolata:wght@400;700&display=swap');
+
+* {
+  font-family: "Barlow Semi Condensed", "Inconsolata", sans-serif;
+  font-size: 32px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 255);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: rgb(0, 0, 0);
+}
+
+#display {
+  margin: 16px 0;
+  padding-right: 15px;
+  text-align: right;
+  font-size: 60px;
+}
+
+.keys-container {
+  display: flex;
+  gap: 8px;
+}
+
+.keys-container > * {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.keys-container .left {
+  flex-grow: 1;
+}
+
+.keys-container .right {
+  max-width: min-content;
+}
+
+.digits-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.key-row {
+  display: flex;
+  gap: 8px;
+}
+
+.key {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(22, 22, 22);
+  transition: ease-in-out 0.25s;
+}
+
+.key.digit:hover, #clear:hover {
+  background-color: rgb(77, 77, 77);
+}
+
+#clear, #zero {
+  width: 100%;
+}
+
+#clear {
+  background-color: rgb(54, 54, 54);
+  color: rgb(255, 104, 104);
+}
+
+.operators-container > * {
+  background-color: rgb(255, 165, 0);
+}
+
+.operators-container > *:hover {
+  background-color: rgb(255, 187, 61);
+}

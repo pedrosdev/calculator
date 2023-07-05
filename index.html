@@ -4,35 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calculator</title>
+    <link rel="stylesheet" href="./styles.css">
     <script src="./scripts.js" defer></script>
   </head>
   <body>
-    <main class="calculator">
+    <div class="calculator">
       <div id="display">0</div>
-      <div class="keys">
+      <div class="keys-container">
         <div class="left">
-          <button id="clear">C</button>
+          <button class="key" id="clear">C</button>
           <div class="digits-container">
-            <button class="digit">1</button>
-            <button class="digit">2</button>
-            <button class="digit">3</button>
-            <button class="digit">4</button>
-            <button class="digit">5</button>
-            <button class="digit">6</button>
-            <button class="digit">7</button>
-            <button class="digit">8</button>
-            <button class="digit">9</button>
-            <button class="digit">0</button>
+            <div class="key-row first">
+              <button class="key digit">7</button>
+              <button class="key digit">8</button>
+              <button class="key digit">9</button>
+            </div>
+            <div class="key-row second">
+              <button class="key digit">4</button>
+              <button class="key digit">5</button>
+              <button class="key digit">6</button>
+            </div>
+            <div class="key-row third">
+              <button class="key digit">1</button>
+              <button class="key digit">2</button>
+              <button class="key digit">3</button>
+            </div>
+            <div class="key-row fourth">
+              <button class="key digit" id="zero">0</button>
+            </div>
           </div>
         </div>
         <div class="right operators-container">
-          <button class="operator">÷</button>
-          <button class="operator">×</button>
-          <button class="operator">-</button>
-          <button class="operator">+</button>
-          <button id="equals">=</button>
+          <button class="key operator">÷</button>
+          <button class="key operator">×</button>
+          <button class="key operator">-</button>
+          <button class="key operator">+</button>
+          <button class="key"id="equals">=</button>
         </div>
       </div>
-    </main>
+    </div>
   </body>
 </html>
